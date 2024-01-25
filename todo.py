@@ -22,6 +22,15 @@ def add_task(task):
         tasks_lst.append({"task": task, "completed": False})
         save_task_to_file()
         print("Task added successfully")
+    
+def delete_task(index):
+    if 0 <= index < len(tasks_lst):
+        tasks_lst.remove(tasks_lst[index])
+        save_task_to_file()
+        print("Task deleted successully")
+    else:
+        print("OOphs! There is no such task")
+
 
 def save_task_to_file():
     with open(TASK_FILE, "w") as file:
@@ -43,7 +52,8 @@ def main():
         print("1: to add a tasks ")
         print("2: to show tasks ")
         print("3: to complete a task ")
-        print("5: to quite ")
+        print("4: to delete a task ")
+        print("5: to quit ")
         print("\nYour Answer: ", end="")
         user_choice = input()
 
@@ -60,6 +70,11 @@ def main():
             task_id = input()
             complete_task(int(task_id))
 
+        elif user_choice == "4":
+            print("Please enter task ID to delete: ", end="")
+            task_id = input()
+            delete_task(int(task_id))
+
         elif user_choice == "5":
             print("Goodbye!")
             break
@@ -67,4 +82,5 @@ def main():
         else:
             print("Please select the available options")
 
-main()
+if __name__ == "__main__":
+    main()
