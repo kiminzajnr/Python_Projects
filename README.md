@@ -1,6 +1,6 @@
 # Python Mini Projects
 
-# CMD Todo App
+# [CMD Todo App](/Todo_CMD_App/)
 
 A command-line to-do app to manage your tasks effectively.
 
@@ -35,6 +35,8 @@ python todo.py
 - Complete a task: Enter 3 and specify the task ID to mark it as completed.
 - Delete a task: Enter 4 and specify the task ID to remove it.
 - Quit: Enter 5 to exit the app.
+
+[usage_demo](/Todo_CMD_App/gif/t-rec.gif)
 
 ## File Structure
 
