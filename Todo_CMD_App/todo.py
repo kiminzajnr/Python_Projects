@@ -1,6 +1,7 @@
 import json
 TASK_FILE = "tasks.json"
 
+
 def show_tasks():
     """Prints all tasks"""
     print("Tasks currently added are:")
@@ -9,6 +10,7 @@ def show_tasks():
             print(f"{index}. {task['task']} - {'Completed' if task['completed'] else 'Not Completed'}")
     else:
         print("No tasks added.")
+
 
 def complete_task(index):
     """Functionality for complete task"""
@@ -19,6 +21,7 @@ def complete_task(index):
     else:
         print("Invalid task index")
 
+
 def add_task(task):
     """add task"""
     if task:
@@ -26,6 +29,7 @@ def add_task(task):
         save_task_to_file()
         print("Task added successfully")
     
+
 def delete_task(index):
     """delete task given a task id"""
     if 0 <= index < len(tasks_lst):
@@ -41,6 +45,7 @@ def save_task_to_file():
     with open(TASK_FILE, "w") as file:
         json.dump(tasks_lst, file)
 
+
 def load_tasks_from_file():
     """read from the json file"""
     try:
@@ -48,6 +53,7 @@ def load_tasks_from_file():
             return json.load(file)
     except FileNotFoundError:
         return []
+
 
 def main():
     """main"""
@@ -88,6 +94,7 @@ def main():
 
         else:
             print("Please select the available options")
+
 
 if __name__ == "__main__":
     main()
