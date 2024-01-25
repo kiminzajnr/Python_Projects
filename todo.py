@@ -4,19 +4,22 @@ TASK_FILE = "tasks.json"
 def show_tasks():
     print("Tasks currently added are:")
     if tasks_lst:
-        for task in tasks_lst:
-            print(task)
+        for index, task in enumerate(tasks_lst):
+            print(f"{index}. {task['task']} - {'Completed' if task['completed'] else 'Not Completed'}")
     else:
         print("No tasks added.")
 
-# def complete_task(index):
-#     tasks_complete_lst.append(tasks_lst[index])
-#     completed_item = tasks_lst.pop(index)
-#     print("Task {} completed successfully".format(completed_item))
+def complete_task(index):
+    if 0 <= index < len(tasks_lst):
+        tasks_lst[index]['completed'] = True
+        save_task_to_file()
+        print("Task marked as completed")
+    else:
+        print("Invalid task index")
 
 def add_task(task):
     if task:
-        tasks_lst.append(task)
+        tasks_lst.append({"task": task, "completed": False})
         save_task_to_file()
         print("Task added successfully")
 
@@ -35,26 +38,33 @@ def main():
     global tasks_lst
     tasks_lst = load_tasks_from_file()
 
-    print("1: to add a tasks ")
-    print("2: to show tasks ")
-    print("Your Answer: ", end="")
-    user_choice = input()
+    while 1:
+        print("\nOptions")
+        print("1: to add a tasks ")
+        print("2: to show tasks ")
+        print("3: to complete a task ")
+        print("5: to quite ")
+        print("\nYour Answer: ", end="")
+        user_choice = input()
 
-    if user_choice == "1":
-        print("Enter task to add: ", end="")
-        task_to_add = input()
-        add_task(task_to_add)
+        if user_choice == "1":
+            print("Enter task to add: ", end="")
+            task_to_add = input()
+            add_task(task_to_add)
 
-    elif user_choice == "2":
-        show_tasks()
+        elif user_choice == "2":
+            show_tasks()
 
-    # elif user_choice == "3":
-    #     print("Please enter task ID to complete: ", end="")
-    #     task_id = input()
-    #     complete_task(int(task_id))
+        elif user_choice == "3":
+            print("Please enter task ID to complete: ", end="")
+            task_id = input()
+            complete_task(int(task_id))
 
-    
-    else:
-        print("Please select the available options")
+        elif user_choice == "5":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Please select the available options")
 
 main()
