@@ -30,7 +30,7 @@ https://github.com/kiminzajnr/Python_Mini_Projects.git
 - Delete a task: Enter 4 and specify the task ID to remove it.
 - Quit: Enter 5 to exit the app.
 
-![usage_demo](/Todo_CMD_App/gif/t-rec.gif)
+![usage_demo](/Todo_CMD_App/gif/demo.gif)
 
 ## File Structure
 
