@@ -50,7 +50,9 @@ Pull requests are welcome!
 
 This project is licensed under the MIT License.
 
+
 =============================
+
 
 # [Grammar Checker](/Grammer_Checker/) ![Alt text](image.png)
 
@@ -102,3 +104,5 @@ If you'd like to contribute to this project, please follow these steps:
 ## License
 This project is licensed under the MIT License.
 
+
+=============================================
