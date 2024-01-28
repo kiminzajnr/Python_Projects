@@ -73,6 +73,6 @@ if __name__ == "__main__":
             read_from_file(file_name)
 
         elif user_selection == "3":
-            print("Goodbye!")
+            print("\nGoodbye!")
             break
         
