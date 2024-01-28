@@ -2,6 +2,14 @@ import language_tool_python
 
 
 def grammar_checker(text):
+    """
+    Check the grammar of the given text using LanguageTool.
+
+    Parameters:
+    - text (str): The input text to be checked.
+
+    Returns: None
+    """
     with language_tool_python.LanguageTool('en-US', config={ 'cacheSize': 1000, 'pipelineCaching': True }) as tool:
         matches = tool.check(text)
 
@@ -25,10 +33,27 @@ def grammar_checker(text):
 
 
 def write_to_file(filename, text):
+    """
+    Write the given text to a file.
+
+    Parameters:
+    - filename (str): The name of the file.
+    - text (str): The text to be written to the file.
+
+    Returns: None
+    """
     with open(filename, "w") as file:
         file.write(text)
 
 def read_from_file(filename):
+    """
+    Read text from a file and perform grammar checking.
+
+    Parameters:
+    - filename (str): The name of the file to be read.
+
+    Returns: None
+    """
     with open(filename) as file:
         text_to_check = file.read()
     grammar_checker(text_to_check)
