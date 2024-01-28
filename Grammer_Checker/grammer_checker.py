@@ -12,10 +12,10 @@ def grammar_checker(text):
                 print(match.message)
 
             save_or_output = input("\nWould you like to save corrected sentence to a file? Yes/No: ")
-            if save_or_output == "No":
+            if save_or_output.lower() == "no":
                 print(f"\nThe corrected text is:\n{tool.correct(text)}")
 
-            elif save_or_output == "Yes":
+            elif save_or_output.lower() == "yes":
                 file_name = input("Enter file name: ")
                 write_to_file(file_name, tool.correct(text))
 
