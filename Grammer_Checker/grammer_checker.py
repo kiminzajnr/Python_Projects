@@ -2,26 +2,26 @@ import language_tool_python
 
 
 def grammar_checker(text):
-    tool = language_tool_python.LanguageTool('en-US', config={ 'cacheSize': 1000, 'pipelineCaching': True })
-    matches = tool.check(text)
+    with language_tool_python.LanguageTool('en-US', config={ 'cacheSize': 1000, 'pipelineCaching': True }) as tool:
+        matches = tool.check(text)
 
 
-    if len(matches) > 0:
-        print("\nGrammar issues found:")
-        for match in matches:
-            print(match.message)
+        if len(matches) > 0:
+            print("\nGrammar issues found:")
+            for match in matches:
+                print(match.message)
 
-        save_or_output = input("\nWould you like to save corrected sentence to a file? Yes/No: ")
-        if save_or_output == "No":
-            print(f"\nThe corrected text is:\n{tool.correct(text)}")
+            save_or_output = input("\nWould you like to save corrected sentence to a file? Yes/No: ")
+            if save_or_output == "No":
+                print(f"\nThe corrected text is:\n{tool.correct(text)}")
 
-        elif save_or_output == "Yes":
-            file_name = input("Enter file name: ")
-            write_to_file(file_name, tool.correct(text))
+            elif save_or_output == "Yes":
+                file_name = input("Enter file name: ")
+                write_to_file(file_name, tool.correct(text))
 
-    else:
-        print("No grammar issues found")
-        return
+        else:
+            print("No grammar issues found")
+            return
 
 
 def write_to_file(filename, text):
