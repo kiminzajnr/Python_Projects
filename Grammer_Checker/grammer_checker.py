@@ -11,11 +11,22 @@ def grammar_checker(text):
         for match in matches:
             print(match.message)
 
+        save_or_output = input("\nWould you like to save corrected sentence to a file? Yes/No: ")
+        if save_or_output == "No":
+            print(f"\nThe corrected text is:\n{tool.correct(text)}")
+
+        elif save_or_output == "Yes":
+            file_name = input("Enter file name: ")
+            write_to_file(file_name, tool.correct(text))
+
     else:
         print("No grammar issues found")
         return
 
-    print(f"\nThe corrected text is:\n{tool.correct(text)}")
+
+def write_to_file(filename, text):
+    with open(filename, "w") as file:
+        file.write(text)
 
 def read_from_file(filename):
     with open(filename) as file:
