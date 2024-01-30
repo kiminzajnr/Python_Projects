@@ -44,5 +44,10 @@ def end_of_civilization_predictor():
                 print("\nWarning: The probability of civilization ending is high. Take necessary precautions.")
                 break
 
+        run_again = input("\nDo you want to run the simulation again? (yes/no): ")
+        if run_again.lower() != "yes":
+            print("\nGoodbye!")
+            break
+
 if __name__ == "__main__":
     end_of_civilization_predictor()
