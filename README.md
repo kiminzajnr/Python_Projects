@@ -108,5 +108,5 @@ This project is licensed under the MIT License.
 =============================================
 
 
-# End of civilization simulator
+# End of civilization predictor
 *Note, This Is Entirely Fictional*
