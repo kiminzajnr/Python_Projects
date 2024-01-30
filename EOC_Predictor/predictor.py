@@ -23,25 +23,26 @@ def end_of_civilization_predictor():
 
     print("\nTotal Probability:", total_probability)
 
-    years_to_simulate = int(input("\nEnter the number of years to simulate: "))
+    while 1:
+        years_to_simulate = int(input("\nEnter the number of years to simulate: "))
 
-    print("\nSimulating the Impact of Factors over Time:")
-    for year in range(1, years_to_simulate + 1):
-        print(f"\nYear {year:}")
-        for factor, probability in factors.items():
-            impact = random.uniform(0, 1)
-            if impact < probability:
-                print(f"{factor} has a significant impact on end of civilization.")
+        print("\nSimulating the Impact of Factors over Time:")
+        for year in range(1, years_to_simulate + 1):
+            print(f"\nYear {year:}")
+            for factor, probability in factors.items():
+                impact = random.uniform(0, 1)
+                if impact < probability:
+                    print(f"{factor} has a significant impact on end of civilization.")
 
-        overall_probability = 0
-        
-        for _ in range(5):
-            overall_probability += random.uniform(0, 1)
-        print(f"Overall Probability of Civilization Ending: {overall_probability}")
+            overall_probability = 0
+            
+            for _ in range(5):
+                overall_probability += random.uniform(0, 1)
+            print(f"Overall Probability of Civilization Ending: {overall_probability}")
 
-        if overall_probability / 5 > 0.5:
-            print("\nWarning: The probability of civilization ending is high. Take necessary precautions.")
-            break
+            if overall_probability / 5 > 0.5:
+                print("\nWarning: The probability of civilization ending is high. Take necessary precautions.")
+                break
 
 if __name__ == "__main__":
     end_of_civilization_predictor()
