@@ -106,3 +106,7 @@ This project is licensed under the MIT License.
 
 
 =============================================
+
+
+# End of civilization simulator
+*Note, This Is Entirely Fictional*
