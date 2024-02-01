@@ -108,7 +108,7 @@ This project is licensed under the MIT License.
 =============================================
 
 
-# End of civilization predictor
+# [End of civilization predictor](/Python_Mini_Projects/EOC_Predictor/)
 *Note, This Is Entirely Fictional*
 
 ## Overview
