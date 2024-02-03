@@ -1,6 +1,8 @@
 # Create a script that organizes files in a directory based on their types (e.g., images, documents, videos).
 # You can use file extensions or content analysis to determine file types.
 
+
+import logging
 from os import path, makedirs, listdir
 from shutil import move
 
@@ -45,7 +47,7 @@ def organize_files(source_dir, destination_dir):
 
             else:
                 # Files with unknown extensions to 'others' dir
-                destination = path.join(destination_dir, 'others')
+                destination = path.join(destination_dir, 'others', filename)
                 move(file_path, destination)
                 print(f"Moved {filename} to {destination}")
 
@@ -54,21 +56,35 @@ def organize_files(source_dir, destination_dir):
 
 
 def main():
-    # file types
-    file_types = ['images', 'documents', 'videos']
+    try:
+        # file types
+        file_types = ['images', 'documents', 'videos', 'others']
 
-    # source and destination dirs given by user
-    source_dir = input("Enter the source directory: ")
-    destination_dir = input("Enter the destination directory: ")
+        # source and destination dirs given by user
+        source_dir = input("Enter the source directory: ")
+        destination_dir = input("Enter the destination directory: ")
 
-    # create destination directories
-    create_destination_dirs(destination_dir, file_types)
+        # check if source dir exits
+        if not path.exists(source_dir) or not path.isdir(source_dir):
+            raise FileNotFoundError(f"Source directory '{source_dir}' not found.")
+        
+        # check and create source dir if it does not exist
+        if not path.exists(destination_dir):
+            makedirs(destination_dir)
+        elif not path.isdir(destination_dir):
+            raise NotADirectoryError(f"Destination path '{destination_dir}' is not a directory")
 
-    # list files in the source dir
-    list_files_in_dir(source_dir)
+        # create destination directories
+        create_destination_dirs(destination_dir, file_types)
 
-    # Organize files
-    organize_files(source_dir, destination_dir)
+        # list files in the source dir
+        list_files_in_dir(source_dir)
+
+        # Organize files
+        organize_files(source_dir, destination_dir)
+
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
