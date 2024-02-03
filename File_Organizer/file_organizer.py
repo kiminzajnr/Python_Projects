@@ -1,6 +1,7 @@
-# Create a script that organizes files in a directory based on their types (e.g., images, documents, videos).
-# You can use file extensions or content analysis to determine file types.
-
+"""
+This script organizes files in a directory based on their types (e.g., images, documents, videos).
+It uses file extenstions to determine file types
+"""
 import click
 import logging
 from os import path, makedirs, listdir
