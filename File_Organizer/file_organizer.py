@@ -2,6 +2,7 @@
 # You can use file extensions or content analysis to determine file types.
 
 from os import path, makedirs, listdir
+from shutil import move
 
 def create_destination_dirs(destination_dir, file_types):
     """
@@ -21,6 +22,36 @@ def list_files_in_dir(source_dir):
         if path.isfile(file_path):
             print(f"- {filename}")
 
+def organize_files(source_dir, destination_dir):
+    """
+    Organize files based on their type
+    """
+    file_types = {
+        "images": [".jpg", "png", ".gif"],
+        "documents": [".pdf", ".doc", ".docx", "txt"],
+        "videos": [".mp4", ".mkv", ".avi"],
+    }
+
+    for filename in listdir(source_dir):
+        file_path = path.join(source_dir, filename)
+        if path.isfile(file_path):
+            file_ext = path.splitext(filename)[1].lower()
+            for category, extensions in file_types.items():
+                if file_ext in extensions:
+                    destination = path.join(destination_dir, category)
+                    move(file_path, destination)
+                    print(f"Moved {filename} to {destination}")
+                    break
+
+            else:
+                # Files with unknown extensions to 'others' dir
+                destination = path.join(destination_dir, 'others')
+                move(file_path, destination)
+                print(f"Moved {filename} to {destination}")
+
+
+
+
 
 def main():
     # file types
@@ -35,6 +66,9 @@ def main():
 
     # list files in the source dir
     list_files_in_dir(source_dir)
+
+    # Organize files
+    organize_files(source_dir, destination_dir)
 
 if __name__ == "__main__":
     main()
