@@ -21,11 +21,16 @@ def list_files_in_dir(source_dir):
     """
     List files in the source directory.
     """
-    print(f"\nFiles in {source_dir}:")
-    for filename in listdir(source_dir):
-        file_path = path.join(source_dir, filename)
-        if path.isfile(file_path):
-            print(f"- {filename}")
+    if len(listdir(source_dir)) == 0:
+        print(f"directory '{source_dir}' is empty")
+        logging.info(f"directory {source_dir} is empty")
+    
+    else:
+        print(f"\nFiles in {source_dir}:")
+        for filename in listdir(source_dir):
+            file_path = path.join(source_dir, filename)
+            if path.isfile(file_path):
+                print(f"- {filename}")
 
 def organize_files(source_dir, destination_dir):
     """
