@@ -27,8 +27,8 @@ def organize_files(source_dir, destination_dir):
     Organize files based on their type
     """
     file_types = {
-        "images": [".jpg", "png", ".gif"],
-        "documents": [".pdf", ".doc", ".docx", "txt"],
+        "images": [".jpg", ".png", ".gif"],
+        "documents": [".pdf", ".doc", ".docx", ".txt", ".md"],
         "videos": [".mp4", ".mkv", ".avi"],
     }
 
@@ -38,7 +38,7 @@ def organize_files(source_dir, destination_dir):
             file_ext = path.splitext(filename)[1].lower()
             for category, extensions in file_types.items():
                 if file_ext in extensions:
-                    destination = path.join(destination_dir, category)
+                    destination = path.join(destination_dir, category, filename)
                     move(file_path, destination)
                     print(f"Moved {filename} to {destination}")
                     break
