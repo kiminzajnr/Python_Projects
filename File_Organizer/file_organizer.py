@@ -37,7 +37,7 @@ def organize_files(source_dir, destination_dir):
     Organize files based on their type
     """
     file_types = {
-        "images": [".jpg", ".png", ".gif"],
+        "images": [".jpg", ".png", ".gif", "jpeg"],
         "documents": [".pdf", ".doc", ".docx", ".txt", ".md"],
         "videos": [".mp4", ".mkv", ".avi"],
     }
