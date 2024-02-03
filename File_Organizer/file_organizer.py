@@ -76,18 +76,18 @@ def main():
         file_types = ['images', 'documents', 'videos', 'others']
 
         # source and destination dirs given by user
-        source_dir = input("Enter the source directory: ")
-        destination_dir = input("Enter the destination directory: ")
+        source_dir = input("\nEnter the source directory: ")
+        destination_dir = input("\nEnter the destination directory: ")
 
         # check if source dir exits
         if not path.exists(source_dir) or not path.isdir(source_dir):
-            raise FileNotFoundError(f"Source directory '{source_dir}' not found.")
+            raise FileNotFoundError(f"\nSource directory '{source_dir}' not found.")
         
         # check and create source dir if it does not exist
         if not path.exists(destination_dir):
             makedirs(destination_dir)
         elif not path.isdir(destination_dir):
-            raise NotADirectoryError(f"Destination path '{destination_dir}' is not a directory")
+            raise NotADirectoryError(f"\nDestination path '{destination_dir}' is not a directory")
 
         # create destination directories
         create_destination_dirs(destination_dir, file_types)
