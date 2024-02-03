@@ -1,7 +1,7 @@
 # Create a script that organizes files in a directory based on their types (e.g., images, documents, videos).
 # You can use file extensions or content analysis to determine file types.
 
-
+import click
 import logging
 from os import path, makedirs, listdir
 from shutil import move
@@ -67,17 +67,19 @@ def organize_files(source_dir, destination_dir):
                 print(f"Error processing {filename}: {e}")
                 logging.error(f"Error processing {filename}: {e}")
 
+@click.command()
+@click.argument('source_dir', type=click.Path(exists=True, file_okay=False, resolve_path=True))
+@click.argument('destination_dir', type=click.Path(file_okay=False, resolve_path=True))
 
 
-
-def main():
+def main(source_dir, destination_dir):
     try:
         # file types
         file_types = ['images', 'documents', 'videos', 'others']
 
         # source and destination dirs given by user
-        source_dir = input("\nEnter the source directory: ")
-        destination_dir = input("\nEnter the destination directory: ")
+        # source_dir = input("\nEnter the source directory: ")
+        # destination_dir = input("\nEnter the destination directory: ")
 
         # check if source dir exits
         if not path.exists(source_dir) or not path.isdir(source_dir):
