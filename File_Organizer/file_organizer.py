@@ -6,6 +6,9 @@ import logging
 from os import path, makedirs, listdir
 from shutil import move
 
+logging.basicConfig(filename="file_organizer.log", level=logging.INFO)
+
+
 def create_destination_dirs(destination_dir, file_types):
     """
     Create destination directories based on file types.
@@ -36,21 +39,28 @@ def organize_files(source_dir, destination_dir):
 
     for filename in listdir(source_dir):
         file_path = path.join(source_dir, filename)
+      
         if path.isfile(file_path):
-            file_ext = path.splitext(filename)[1].lower()
-            for category, extensions in file_types.items():
-                if file_ext in extensions:
-                    destination = path.join(destination_dir, category, filename)
+            try:
+                file_ext = path.splitext(filename)[1].lower()
+                for category, extensions in file_types.items():
+                    if file_ext in extensions:
+                        destination = path.join(destination_dir, category, filename)
+                        move(file_path, destination)
+                        print(f"Moved {filename} to {destination}")
+                        logging.info(f"Moved {filename} to {destination}")
+                        break
+
+                else:
+                    # Files with unknown extensions to 'others' dir
+                    destination = path.join(destination_dir, 'others', filename)
                     move(file_path, destination)
                     print(f"Moved {filename} to {destination}")
-                    break
-
-            else:
-                # Files with unknown extensions to 'others' dir
-                destination = path.join(destination_dir, 'others', filename)
-                move(file_path, destination)
-                print(f"Moved {filename} to {destination}")
-
+                    logging.info(f"Moved {filename} to {destination}")
+                    
+            except Exception as e:
+                print(f"Error processing {filename}: {e}")
+                logging.error(f"Error processing {filename}: {e}")
 
 
 
