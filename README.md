@@ -50,6 +50,7 @@ python todo.py
 
 - `todo.py`: Main Python script containing the todo app logic.
 - `tasks.json`: JSON file to persist tasks.
+
 ## Contributing
 
 Pull requests are welcome!
