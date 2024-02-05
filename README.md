@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [CMD Todo App](#CMD-Todo-App)
-- [Grammar Checker](#grammar-checker)
+- [Grammar Checker](#Grammar-Checker)
 - [End of civilization predictor](#End-of-civilization-predictor)
 - [Automated File Organizer](#Automated-File-Organizer)
 
