@@ -164,7 +164,7 @@ If you'd like to contribute to this project, please follow these steps:
 
 ======================================================
 
-# Automated File Organizer
+# [Automated File Organizer](/File_Organizer/)
 
 This script organizes files in a directory based on their types (e.g., images, documents, videos) using file extensions to determine file types.
 
