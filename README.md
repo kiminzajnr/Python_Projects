@@ -1,5 +1,13 @@
 # Python Mini Projects
 
+## Table of Contents
+
+- [CMD Todo App](#CMD-Todo-App)
+- [Grammar Checker](#Grammar-Checker)
+- [End of civilization predictor](#End-of-civilization-predictor)
+- [Automated File Organizer](#Automated-File-Organizer)
+
+
 # [CMD Todo App](/Todo_CMD_App/)
 
 A command-line to-do app to manage your tasks effectively.
