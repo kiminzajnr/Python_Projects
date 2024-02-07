@@ -167,7 +167,7 @@ If you'd like to contribute to this project, please follow these steps:
 
 ## Acknowledgments
 - [Python](https://www.python.org/): The programming language used for this project.
-- [Random Library](https://docs.python.org/3/library/random.html): Used for generating random values.e, This Is Entirely Fictional*
+- [Random Library](https://docs.python.org/3/library/random.html): Used for generating random values.
 
 
 
