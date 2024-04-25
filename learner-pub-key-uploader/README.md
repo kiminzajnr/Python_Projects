@@ -1,26 +1,63 @@
-#### Description
-Currently the intranet does not "Sniff" changes in learner's public key in their intranet profile. This "adds" that functionality by helping them upload new public keys any time without the need to ask for new servers, redo projects or reconfigure their servers. 
+# Project Title
 
-#### A typical problem this would solve
+One Paragraph of project description goes here
 
-###### Problem:  
+## Getting Started
 
-`My sandbox that has private key has crushed and am getting this email "Error: No such container:   569046093b164634feead0c288ba9054c3c5edadda4f67e7e79ef0b07b6dace7"  
-[17:22]  
-`
-`
-I need help to upload another public key
-`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-**Solution:**  
-Use this to upload another public key  
-[https://www.parallel-cumpus.tech/](https://www.parallel-cumpus.tech/)
+### Prerequisites
 
-###### More:
-`kept saying permission denied, public key when I run ssh ubuntu@IPaddress on my new resetted Ubuntu 20.04 sandbox.
-`
+What things you need to install the software and how to install them
 
-> `this worked for me thank you so much guys, I have been thinking of how I will go all over the process of configuring my server again, I'm glad
-`
+```
+Give examples
+```
 
-This is available to learners here: [https://www.parallel-cumpus.tech/](https://www.parallel-cumpus.tech/)
+### Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
