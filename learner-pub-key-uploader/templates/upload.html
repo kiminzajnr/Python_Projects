@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public SSH Key Uploader</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Public SSH Pub Key Uploader</h1>
+    
+    <form action="/upload" method="post">
+        <div class="message-intro">
+            <p>
+                Dear learner, <br> SSH key uploader helps you access your servers after you lose your public key.<br>
+                Basically, it just uploads your new public key to your server(s), so you wont need to request new servers.<br>
+            </p>
+            <p>
+                It does not give you access after blocking yourself from your server(s) using a firewall.<br>
+                For that, request new servers and set them up as guided in the projects; you won't need to use this.<br>
+            </p>
+            <p>
+                Now, if after reading that you still don't understand what this aims to achieve, I encourage you not to use this app. Instead, read how SSH works and redo the projects to have everything in order.
+            </p>
+            <p>
+                Feel free to add IPs in any order or add one, two or all IPs depending on the server(s) you need to upload the pub key for
+            </p>
+        </div>
+        <label for="ip1">178-web-01 IP:</label>
+        <input type="text" name="ip1" id="ip1"><br>
+
+        <label for="ip2">178-web-02 IP:</label>
+        <input type="text" name="ip2" id="ip2"><br>
+
+        <label for=        "ip3">178-lb-01 IP:</label>
+        <input type="text" name="ip3" id="ip3"><br>
+
+        <label for="public_key">Public Key:</label>
+        <textarea name="public_key" id="public_key" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Upload Key">
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success/Failure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        p {
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .failure {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>SSH Pub Key Upload Status</h1>
+    <p class="{{ message_type }}">{{ message }}</p>
+</body>
+</html>
