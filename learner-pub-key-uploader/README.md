@@ -1,4 +1,4 @@
-# Project Title
+# SSH Key Uploader
 
 Uploads a public key to server/s
 
