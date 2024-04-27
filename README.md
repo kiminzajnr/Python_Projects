@@ -33,7 +33,7 @@ chmod 400 ~/.ssh/priv.key
 ```
 
 
-### Prerequisites
+## Prerequisites
 
 Refer to `Getting Started`
 
