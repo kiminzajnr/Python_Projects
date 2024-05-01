@@ -18,7 +18,7 @@ git clone https://github.com/kiminzajnr/Python_Projects.git
 ```
 
 ```
-cd ython_Projects/learner-pub-key-uploader
+cd Python_Projects/learner-pub-key-uploader
 python3 -m venv .venv
 . .venv/bin/activate
 pip install Flask
