@@ -40,6 +40,7 @@ class Book(models.Model):
     isbn = models.CharField('ISBN', max_length=13, unique=True, help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn'
                                     '">ISBN number</a>')
     genre = models.ManyToManyField('Genre', help_text="Elect a genre for this book")
+    language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
     def display_genre(self):
         return ', '.join(genre.name for genre in self.genre.all()[:3])
@@ -104,6 +105,10 @@ class Author(models.Model):
 
 class Language(models.Model):
     name = models.CharField(max_length=200, unique=True, help_text="Enter books natural language")
+    
+
+    def get_absolute_url(self):
+        return reverse('language-detail', args=[str(self.id)])
     
     def __str__(self):
         return self.name
