@@ -5,9 +5,10 @@
   <p>{{ author.date_of_birth }} - {{ author.date_of_death }}</p>
 
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Books</h4>
-    {% for author in author_list %}
-        {{ author.last_name }}
+    <h3 style="color: chartreuse;">Books</h3>
+    {% for book in author.book_set.all %}
+        <h4><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h4>
+        <p>{{ book.summary }}</p>
     {% endfor %}
   </div>
 {% endblock %}
