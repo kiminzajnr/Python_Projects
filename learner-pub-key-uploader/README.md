@@ -110,7 +110,7 @@ server {
 
         location / {
                 include proxy_params;
-                proxy_pass http://unix:/home/ubuntu/My_App/learner-pub-key-uploader/app.sock;
+                proxy_pass http://unix:/home/ubuntu/learner-pub-key-uploader/app.sock;
         }
 }
 
