@@ -116,7 +116,7 @@ server {
 
 ```
 ```
-sudo ln -s /etc/nginx/sites-available/app.conf /etc/nginx/site-enabled/
+sudo ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled/
 ```
 ```
 sudo nginx -t # test should be successful and syntax ok
