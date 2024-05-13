@@ -119,13 +119,13 @@ server {
 
         location / {
                 include proxy_params;
-                proxy_pass http://unix:/home/ubuntu/My_App/learner-pub-key-uploader/app.sock;
+                proxy_pass http://unix:/home/ubuntu/learner-pub-key-uploader/app.sock;
         }
 }
 
 ```
 ```
-sudo ls -s /etc/nginx/site-available/app.conf /etc/nginx/site-enabled/
+sudo ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled/
 ```
 ```
 sudo nginx -t # test should be successful and syntax ok
@@ -145,7 +145,7 @@ sudo chmod 775 /home/user
 
 > setting up https with let's encrypt
 ```
-sud apt update; sudo snap install core; snap refresh core
+sudo apt update; sudo snap install core; snap refresh core
 ```
 ```
 sudo snap install --classic certbot
