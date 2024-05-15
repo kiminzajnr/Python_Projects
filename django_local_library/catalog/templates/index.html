@@ -19,4 +19,8 @@
     <li><strong>Authors:</strong> {{ num_authors }}</li>
     <li><strong>Genres Available:</strong> {{ num_genres_available }}</li>
   </ul>
+
+  <p>
+    You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
+  </p>
 {% endblock %}
