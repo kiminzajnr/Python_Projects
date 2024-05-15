@@ -136,7 +136,7 @@ sudo chmod 775 /home/user
 
 > setting up https with let's encrypt
 ```
-sudo apt update; sudo snap install core; snap refresh core
+sudo apt update; sudo snap install core; sudo snap refresh core
 ```
 ```
 sudo snap install --classic certbot
