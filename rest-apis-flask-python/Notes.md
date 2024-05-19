@@ -13,3 +13,5 @@ print(friends is starts_s) # False because the 2 lists are in different mem loca
 ```
 [name for name in names_list if name.startswith("B")]
 ```
+
+- Lambda function -  a function without a name, used to return a value
