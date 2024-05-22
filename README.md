@@ -2,12 +2,13 @@
 
 ## Table of Contents
 - [SSH key Uploader](#ssh-key-uploader)
+- [Simple REST API](#simple-rest-api)
 - [CMD Todo App](#CMD-Todo-App)
 - [Grammar Checker](#Grammar-Checker)
 - [End of civilization predictor](#End-of-civilization-predictor)
 - [Automated File Organizer](#Automated-File-Organizer)
 
-# SSH Key Uploader
+# [SSH Key Uploader](/learner-pub-key-uploader/)
 
 Uploads a public key to server/s
 
@@ -164,6 +165,77 @@ sudo certbot --nginx
 - <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="HTML" width="20" height="20"/> [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - <img src="https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png" alt="CSS" width="20" height="20"/> [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
+# [Simple REST API](/rest-apis-flask-python/Flask_Rest/)
+
+## Features
+
+- Create stores, each with a `name` and a list of stocked `items`.
+- Create an item within a store, each with a `name` and a `price`.
+- Retrieve a list of all stores and their items.
+- Given its `name`, retrieve an individual store and all its items.
+- Given a store `name`, retrieve only a list of item within it.
+
+## Create stores
+
+Request:
+```
+POST /store {"name": "My Store"}
+```
+
+Response:
+```
+{"name": "My Store", "items": []}
+```
+
+## Create items
+
+Request:
+```
+POST /store/My Store/item {"name": "Chair", "price": 175.50}
+```
+Response:
+```
+{"name": "Chair", "price": 175.50}
+```
+
+## Retrieve all stores and their items
+
+Request:
+```
+GET /store
+```
+Response:
+```
+{
+    "stores": [
+        {
+            "name": "My Store",
+            "items": [
+                {
+                    "name": "Chair",
+                    "price": 175.50
+                }
+            ]
+        }
+    ]
+}
+```
+
+## Get only items in a store
+
+Request:
+```
+GET /store/My Store/item
+```
+Response:
+```
+[
+    {
+        "name": "Chair",
+        "price": 175.50
+    }
+]
+```
 
 # [CMD Todo App](/Todo_CMD_App/)
 
