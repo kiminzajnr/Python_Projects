@@ -1,6 +1,7 @@
 # Simple REST API
 
-## Features
+## Features
+
 - Create stores, each with a `name` and a list of stocked `items`.
 - Create an item within a store, each with a `name` and a `price`.
 - Retrieve a list of all stores and their items.
@@ -8,6 +9,7 @@
 - Given a store `name`, retrieve only a list of item within it.
 
 ## Create stores
+
 Request:
 ```
 POST /store {"name": "My Store"}
@@ -19,6 +21,7 @@ Response:
 ```
 
 ## Create items
+
 Request:
 ```
 POST /store/My Store/item {"name": "Chair", "price": 175.50}
@@ -29,6 +32,7 @@ Response:
 ```
 
 ## Retrieve all stores and their items
+
 Request:
 ```
 GET /store
@@ -51,6 +55,7 @@ Response:
 ```
 
 ## Get only items in a store
+
 Request:
 ```
 GET /store/My Store/item
