@@ -1,5 +1,7 @@
 # Simple REST API
 
+==========================================
+
 ## Features
 
 - Create stores, each with a `name` and a list of stocked `items`.
