@@ -1,7 +1,7 @@
 # MySQL Replication
 
 ## MySQL Installation
-[How To](https://intranet.alxswe.com/concepts/100002)
+## [How To Install Guide](https://intranet.alxswe.com/concepts/100002)
 
 ```
 mysql --version
