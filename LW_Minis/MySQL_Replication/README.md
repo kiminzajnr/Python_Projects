@@ -60,3 +60,24 @@ sudo systemctl restart mysql
 FLUSH TABLES WITH READ LOCK;
 SHOW MASTER STATUS;
 ```
+
+## Migrate existing data to slave
+- Create a mysqldump utility
+```
+scp -i ~/.ssh/priv.key tyrell_corp.sql ubuntu@slave_ip:/tmp/
+```
+
+- create `tyrell_corp` database in slave
+```
+CREATE DATABASE tyrell_corp;
+```
+
+- import the snapshot
+```
+sudo mysql tyrell_corp < /tmp/tyrell_corp.sql
+```
+
+- Unlock tables in master
+```
+UNLOCK TABLES;
+```
