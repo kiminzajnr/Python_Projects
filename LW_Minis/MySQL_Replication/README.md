@@ -1,5 +1,7 @@
 # MySQL Replication
 
+![MySQL_Replication](/MySQL_Replication/img/Repl.png)
+
 ## MySQL 5.7.* Installation
 ## [How To Install Guide](https://intranet.alxswe.com/concepts/100002) - (credits: [nuuX](https://github.com/nuuxcode) - C13)
 - Check version:
