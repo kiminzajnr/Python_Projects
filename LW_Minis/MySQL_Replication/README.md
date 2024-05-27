@@ -46,7 +46,7 @@ binlog_do_db     = tyrell_corp
 ```
 To:
 ```
-sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+/etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
 - Restart MySQL
@@ -80,4 +80,23 @@ sudo mysql tyrell_corp < /tmp/tyrell_corp.sql
 - Unlock tables in master
 ```
 UNLOCK TABLES;
+```
+
+# Configure slave
+- Add:
+```
+server-id               = 2
+log_bin                 = /var/log/mysql/mysql-bin.log
+binlog_do_db            = tyrell_corp
+relay-log               = /var/log/mysql/mysql-relay-bin.log
+```
+
+To:
+```
+/etc/mysql/mysql.conf.d/mysqld.cnf
+```
+
+- restart MySQL
+```
+sudo systemctl restart mysql
 ```
