@@ -40,8 +40,8 @@ GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
 
 - Add:
 ```
-server-id              = 1
-log_bin                 = /var/log/mysql/mysql-bin.log
+server-id        = 1
+log_bin          = /var/log/mysql/mysql-bin.log
 binlog_do_db     = tyrell_corp
 ```
 - To:
@@ -100,3 +100,28 @@ relay-log               = /var/log/mysql/mysql-relay-bin.log
 ```
 sudo systemctl restart mysql
 ```
+
+# Testing Replication
+
+- On slave, configure replication settings by running:
+
+```
+CHANGE MASTER TO
+MASTER_HOST='master_ip',
+MASTER_USER='replica_user',
+MASTER_PASSWORD='password#70',
+MASTER_LOG_FILE='mysql-bin.000001',
+MASTER_LOG_POS=154;
+```
+
+- Activate slave
+```
+START SLAVE;
+```
+
+- Show slave state
+```
+SHOW SLAVE STATUS\G;
+```
+
+- Creating an entry in master should now reflect in slave
