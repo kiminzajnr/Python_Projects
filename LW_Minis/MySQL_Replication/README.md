@@ -1,6 +1,6 @@
 # MySQL Replication
 
-![MySQL_Replication](/img/Repl.png)
+![MySQL_Replication](https://raw.githubusercontent.com/kiminzajnr/Python_Projects/master/LW_Minis/MySQL_Replication/img/Repl.png)
 
 ## MySQL 5.7.* Installation
 ## [How To Install Guide](https://intranet.alxswe.com/concepts/100002) - (credits: [nuuX](https://github.com/nuuxcode) - C13)
