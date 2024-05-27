@@ -23,3 +23,13 @@ CREATE TABLE nexus6 (id int auto_increment primary key, name varchar(50));
 ```
 INSERT INTO nexus6(name) VALUES ("Erick");
 ```
+
+## Create a new user for the replica 
+```
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'password';
+```
+
+## Grant replication permission
+```
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+```
