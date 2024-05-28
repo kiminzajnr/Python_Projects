@@ -43,7 +43,7 @@ GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
 - Add:
 ```
 server-id        = 1
-log_bin          = /var/log/mysql/mysql-bin.log
+log_bin          = /var/log/mysql/mysql-bin.log # binary log - record changes made to the db in binary formart
 binlog_do_db     = tyrell_corp
 ```
 - To:
@@ -90,7 +90,7 @@ UNLOCK TABLES;
 server-id               = 2
 log_bin                 = /var/log/mysql/mysql-bin.log
 binlog_do_db            = tyrell_corp
-relay-log               = /var/log/mysql/mysql-relay-bin.log
+relay-log               = /var/log/mysql/mysql-relay-bin.log # 
 ```
 
 - To:
