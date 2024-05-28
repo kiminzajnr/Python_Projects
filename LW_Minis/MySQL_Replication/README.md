@@ -38,7 +38,7 @@ GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
 
 # Setting up the replication
 
-# Configre master
+# Configure master
 
 - Add:
 ```
