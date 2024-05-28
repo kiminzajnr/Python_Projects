@@ -90,7 +90,7 @@ UNLOCK TABLES;
 server-id               = 2
 log_bin                 = /var/log/mysql/mysql-bin.log
 binlog_do_db            = tyrell_corp
-relay-log               = /var/log/mysql/mysql-relay-bin.log # 
+relay-log               = /var/log/mysql/mysql-relay-bin.log # Contain everything read from master bin log
 ```
 
 - To:
