@@ -90,7 +90,10 @@ UNLOCK TABLES;
 server-id               = 2
 log_bin                 = /var/log/mysql/mysql-bin.log
 binlog_do_db            = tyrell_corp
-relay-log               = /var/log/mysql/mysql-relay-bin.log # Contain everything read from master bin log
+relay-log               = /var/log/mysql/mysql-relay-bin.log 
+# Contain everything read from master bin log
+# Store events that need to be applied to slave db locally
+# Events are read from relay log and applied to slave
 ```
 
 - To:
