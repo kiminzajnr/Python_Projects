@@ -5,7 +5,7 @@
 ## Features
 
 - Create stores, each with a `name` and a list of stocked `items`.
-- Create an item within a store, each with a `name` and a `price`.
+- Create an item within a `store`, each with a `name` and a `price`.
 - Retrieve a list of all stores and their items.
 - Given its `name`, retrieve an individual store and all its items.
 - Given a store `name`, retrieve only a list of item within it.
