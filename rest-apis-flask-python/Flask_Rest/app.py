@@ -14,6 +14,14 @@ def get_stores():
 @app.post("/store")
 def create_store():
     store_data = request.get_json()
+    if "name" not in store_data:
+        abort(
+            400,
+            message="Bad request. Ensure 'name' is included in the JSON payload.",
+        )
+    for store in stores.values():
+        if store_data["name"] == store["name"]:
+            abort(400, message=f"Store already exists.")
     store_id = uuid.uuid4().hex
     store = {**store_data, "id": store_id}
     stores[store_id] = store
@@ -56,11 +64,11 @@ def get_store(store_id):
     try:
         return stores[store_id]
     except KeyError:
-         abort(404, message={"message": "Store not found"})
+         abort(404, message=f"Store not found")
 
 @app.get("/item/<string:item_id>")
 def get_item(item_id):
     try:
         return items[item_id]
     except KeyError:
-         abort(404, message={"message": "item not found"})
+         abort(404, message=f"item not found")
