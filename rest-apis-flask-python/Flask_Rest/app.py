@@ -83,7 +83,6 @@ def delete_item(item_id):
 
 @app.put("/item/<string:item_id>")
 def update_item(item_id):
-    item_id = request.get_json()
     item_data = request.get_json()
 
     if "price" not in item_data or "name" not in item_data:
