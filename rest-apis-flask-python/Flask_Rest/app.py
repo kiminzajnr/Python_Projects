@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.get("/store")
 def get_stores():
-    return {"stores": stores}
+    return {"stores": list(stores.values())}
 
 @app.post("/store")
 def create_store():
@@ -26,12 +26,12 @@ def create_item(name):
             return new_item, 201
     return {"message": "Store not found"}, 404
 
-@app.get("/store/<string:name>")
-def get_store(name):
-    for store in stores:
-        if store["name"] == name:
-            return store
-    return {"message": "Store not found"}, 404
+@app.get("/store/<string:store_id>")
+def get_store(store_id):
+    try:
+        return stores[store_id]
+    except KeyError:
+        return {"message": "Store not found"}, 404
 
 @app.get("/store/<string:name>/item")
 def get_item_in_store(name):
