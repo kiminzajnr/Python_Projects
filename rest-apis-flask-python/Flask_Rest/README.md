@@ -10,6 +10,11 @@
 - Given its `name`, retrieve an individual store and all its items.
 - Given a store `name`, retrieve only a list of item within it.
 
+## New endpoints
+- `DELETE /item/<string:item_id>` delete items from the database.
+- `PUT /item/<string:item_id>` update items.
+- `DELETE /store/<string:store_id>` delete stores.
+
 ## Create stores
 
 Request:
