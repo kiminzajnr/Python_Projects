@@ -7,6 +7,8 @@ EXPOSE 5000
 # everything we do in docker image will happen in the images /app directory
 WORKDIR /app
 
+COPY requirements.txt .
+
 # run command in image
 RUN pip install flask
 
