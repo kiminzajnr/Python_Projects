@@ -10,7 +10,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # run command in image
-RUN pip install flask
+RUN pip install -r requirements.txt
 
 # coopies everything in the current folder into the images current folder
 COPY . .
