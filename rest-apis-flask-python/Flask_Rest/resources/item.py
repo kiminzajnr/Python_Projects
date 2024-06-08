@@ -11,18 +11,6 @@ from models import ItemModel
 
 blp = Blueprint("Items", __name__, description="Operations on items")
 
-@blp.arguments(ItemSchema)
-@blp.response(201, ItemSchema)
-def post(self, item_data):
-    item = ItemModel(**item_data)
-
-    try:
-        db.session.add(item)
-        db.session.commit()
-    except SQLAlchemyError:
-        abort(500, message="An error occured while inserting the item.")
-
-    return item
 
 @blp.route("/item/<string:item_id>")
 class Item(MethodView):
@@ -58,18 +46,15 @@ class ItemList(MethodView):
     def get(self):
         return ItemModel.query.all()
 
-    # @blp.arguments(ItemSchema)
-    # @blp.response(201, ItemSchema)
-    # def post(self, item_data):
-    #     for item in items.values():
-    #         if (
-    #             item_data["name"] == item["name"]
-    #             and item_data["store_id"] == item["store_id"]
-    #         ):
-    #             abort(400, message=f"Item already exists.")
+    @blp.arguments(ItemSchema)
+    @blp.response(201, ItemSchema)
+    def post(self, item_data):
+        item = ItemModel(**item_data)
 
-    #     item_id = uuid.uuid4().hex
-    #     item = {**item_data, "id": item_id}
-    #     items[item_id] = item
+        try:
+            db.session.add(item)
+            db.session.commit()
+        except SQLAlchemyError:
+            abort(500, message="An error occured while inserting the item.")
 
-    #     return item
+        return item
