@@ -58,18 +58,18 @@ class ItemList(MethodView):
     def get(self):
         return ItemModel.query.all()
 
-    @blp.arguments(ItemSchema)
-    @blp.response(201, ItemSchema)
-    def post(self, item_data):
-        for item in items.values():
-            if (
-                item_data["name"] == item["name"]
-                and item_data["store_id"] == item["store_id"]
-            ):
-                abort(400, message=f"Item already exists.")
+    # @blp.arguments(ItemSchema)
+    # @blp.response(201, ItemSchema)
+    # def post(self, item_data):
+    #     for item in items.values():
+    #         if (
+    #             item_data["name"] == item["name"]
+    #             and item_data["store_id"] == item["store_id"]
+    #         ):
+    #             abort(400, message=f"Item already exists.")
 
-        item_id = uuid.uuid4().hex
-        item = {**item_data, "id": item_id}
-        items[item_id] = item
+    #     item_id = uuid.uuid4().hex
+    #     item = {**item_data, "id": item_id}
+    #     items[item_id] = item
 
-        return item
+    #     return item
