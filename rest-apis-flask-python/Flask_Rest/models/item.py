@@ -10,6 +10,6 @@ class ItemModel(db.Model):
     store_id = db.Column(db.Integer, unique=False, nullable=False)
 
     store_id = db.Column(
-        db.Iteger, db.ForeignKey("stores.id"), unique=False, nullable=False
+        db.Integer, db.ForeignKey("stores.id"), unique=False, nullable=False
     )
     store = db.relationship("StoreModel", back_populates="items")
