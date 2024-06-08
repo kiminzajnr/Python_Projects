@@ -52,9 +52,9 @@ class Item(MethodView):
     
 @blp.route("/item")
 class ItemList(MethodView):
-    @blp.response(201, ItemSchema)
+    @blp.response(200, ItemSchema(many=True))
     def get(self):
-        return {"items": list(items.values())}
+        return ItemModel.query.all()
 
     @blp.arguments(ItemSchema)
     @blp.response(201, ItemSchema)
