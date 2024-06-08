@@ -43,9 +43,9 @@ class Store(MethodView):
 
 @blp.route("/store")
 class StoreList(MethodView):
-    @blp.response(201, StoreSchema)
+    @blp.response(201, StoreSchema(many=True))
     def get(self):
-        return {"stores": list(stores.values())}
+        return StoreModel.query.all()
     
     @blp.arguments(StoreSchema)
     def post(self, store_data):
