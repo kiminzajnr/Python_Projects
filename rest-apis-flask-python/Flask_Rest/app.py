@@ -8,6 +8,7 @@ from flask_smorest import Api
 from resources.item import blp as ItemBlueprint
 from resources.store import blp as StoreBlueprint
 
+
 def create_app(db_url=None):
     app = Flask(__name__)
 
