@@ -35,7 +35,7 @@ class TagsInStore(MethodView):
         except SQLAlchemyError as e:
             abort(
                 500,
-                message=str(e)
+                message=str(e),
             )
 
         return tag
