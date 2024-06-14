@@ -9,6 +9,7 @@ from db import db
 
 from models import StoreModel
 from models import TagModel
+from models import ItemModel
 
 
 blp = Blueprint("Tags", "tags", description="Operation on tags")
@@ -37,6 +38,23 @@ class TagsInStore(MethodView):
                 500,
                 message=str(e),
             )
+
+        return tag
+    
+@blp.route("/item/<string:item_id>/tag/<string:tag_id>")
+class LinkTagsToItem(MethodView):
+    @blp.response(201, TagSchema)
+    def post(self, item_id, tag_id):
+        item = ItemModel.query.get_or_404(item_id)
+        tag = TagModel.query.get_or_404(tag_id)
+
+        item.tags.append(tag)
+
+        try:
+            db.session.add(item)
+            db.session.commit()
+        except SQLAlchemyError:
+            abort(500, message="An error occurred while inserting the tag.")
 
         return tag
     
