@@ -5,6 +5,7 @@ from db import db
 
 from flask import Flask
 from flask_smorest import Api
+from flask_jwt_extended import JWTManager
 
 from resources.item import blp as ItemBlueprint
 from resources.store import blp as StoreBlueprint
@@ -25,6 +26,9 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
     api = Api(app)
+
+    app.config["JWT_SECRET_KEY"] = "289719758339784524163913181256785129218" # str(secrets.SystemRandom().getrandbits(128))
+    jwt = JWTManager(app)
 
     with app.app_context():
         db.create_all()
