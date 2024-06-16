@@ -1,4 +1,5 @@
 from flask_smorest import Blueprint, abort
+from flask.views import MethodView
 from passlib.hash import pbkdf2_sha256
 
 from schemas import UserSchema
@@ -25,3 +26,21 @@ class UserRegister("/register"):
         db.session.commit()
 
         return {"message": "User created successfully."}, 201
+    
+@blp.route("/user/<int:user_id>")
+class User(MethodView):
+    """
+    This resource can be useful when testing our Flask app.
+    We may not want to expose it to public users, but it can be useful
+    when we are manipulating data regarding the users.
+    """
+    @blp.response(200, UserSchema)
+    def get(self, user_id):
+        user = UserModel.query.get_or_404(user_id)
+        return user
+    
+    def delete(self, user_id):
+        user = UserModel.query.get_or_404(user_id)
+        db.session.delete(user)
+        db.session.commit()
+        return {"message": "User deleted."}, 200
