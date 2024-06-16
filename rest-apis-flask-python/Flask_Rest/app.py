@@ -1,4 +1,3 @@
-import models
 import os
 
 from db import db
@@ -13,6 +12,7 @@ from resources.tag import blp as TagBlueprint
 
 
 def create_app(db_url=None):
+    import models
     app = Flask(__name__)
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
