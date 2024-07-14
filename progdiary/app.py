@@ -1,4 +1,4 @@
-from db import add_entry, get_entries
+from db import create_table, add_entry, get_entries
 
 
 menu = """Please select one of the following options:
@@ -21,6 +21,8 @@ def view_entries(entries):
 
 
 print(welcome)
+create_table()
+
 
 while (user_input := input(menu)) != "3":
     if user_input == "1":
