@@ -47,3 +47,4 @@ def get_watched_movies():
         cursor = connection.cursor()
         cursor.execute(SELECT_WATCHED_MOVIES)
         return cursor.fetchall()
+    
