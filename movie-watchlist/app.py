@@ -16,6 +16,11 @@ welcome = "Welcome to the watchlist app!"
 print(welcome)
 database.create_tables()
 
+
+def prompt_add_movie():
+    title = input("Movie title: ")
+    release_date = input("Release date (dd-mm-YYYY): ")
+
 while (user_input := input(menu)) != "6":
     if user_input == "1":
         pass
