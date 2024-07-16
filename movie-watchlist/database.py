@@ -17,11 +17,13 @@ connection = sqlite3.connect("data.db")
 
 
 def create_tables():
-    pass
+    with connection:
+        connection.execute(CREATE_MOVIES_TABLE)
 
 
-def add_movie(title, release_timestamp)
-    pass
+def add_movie(title, release_timestamp):
+    with connection:
+        connection.execute(INSERT_MOVIES, title, release_timestamp)
 
 
 def get_movies(upcoming=False):
