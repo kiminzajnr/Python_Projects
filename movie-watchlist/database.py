@@ -24,7 +24,7 @@ def create_tables():
 
 def add_movie(title, release_timestamp):
     with connection:
-        connection.execute(INSERT_MOVIES, title, release_timestamp)
+        connection.execute(INSERT_MOVIES, (title, release_timestamp))
 
 
 def get_movies(upcoming=False):
