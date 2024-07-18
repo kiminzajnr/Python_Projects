@@ -49,9 +49,9 @@ def watch_movies(username, movie_title):
         connection.execute(DELETE_MOVIE, (movie_title, ))
         connection.execute(INSERT_WATCHED_MOVIES, (username, movie_title, ))
 
-def get_watched_movies():
+def get_watched_movies(username):
     with connection:
         cursor = connection.cursor()
-        cursor.execute(SELECT_WATCHED_MOVIES)
+        cursor.execute(SELECT_WATCHED_MOVIES, (username, ))
         return cursor.fetchall()
     
