@@ -63,6 +63,6 @@ while (user_input := input(menu)) != "6":
     elif user_input == "5":
         username = input("Username: ")
         movies = database.get_watched_movies(username)
-        print_movie_list(username, movies)
+        print_watched_movie_list(username, movies)
     else:
         print("Invalid input, please try again!")
