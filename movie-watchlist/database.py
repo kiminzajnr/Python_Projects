@@ -22,7 +22,7 @@ INSERT_MOVIES = "INSERT INTO movies (title, release_timestamp) VALUES (?, ?);"
 DELETE_MOVIE = "DELETE FROM movies WHERE title = ?;"
 SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
-INSERT_WATCHED_MOVIES = "INSERT INTO watched (watcher_name, title) VALUES (?, ?);"
+INSERT_WATCHED_MOVIES = "INSERT INTO watched (user_username, movie_id) VALUES (?, ?);"
 SELECT_WATCHED_MOVIES = "SELECT * FROM watched WHERE watcher_name = ?;"
 
 
@@ -52,10 +52,9 @@ def get_movies(upcoming=False):
         return cursor.fetchall()
 
 
-def watch_movies(username, movie_title):
+def watch_movies(username, movie_id):
     with connection:
-        connection.execute(DELETE_MOVIE, (movie_title, ))
-        connection.execute(INSERT_WATCHED_MOVIES, (username, movie_title, ))
+        connection.execute(INSERT_WATCHED_MOVIES, (username, movie_id))
 
 def get_watched_movies(username):
     with connection:
