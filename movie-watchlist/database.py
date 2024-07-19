@@ -19,14 +19,20 @@ CREATE_WATCHED_TABLE = """CREATE TABLE IF NOT EXISTS watched (
 );"""
 
 INSERT_MOVIES = "INSERT INTO movies (title, release_timestamp) VALUES (?, ?);"
-DELETE_MOVIE = "DELETE FROM movies WHERE title = ?;"
+# DELETE_MOVIE = "DELETE FROM movies WHERE title = ?;"
 SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
 INSERT_WATCHED_MOVIES = "INSERT INTO watched (user_username, movie_id) VALUES (?, ?);"
 SELECT_WATCHED_MOVIES = "SELECT * FROM watched WHERE watcher_name = ?;"
+INSERT_USER = "INSERT INTO users (username) VALUES (?);"
 
 
 connection = sqlite3.connect("data.db")
+
+
+def add_user(username):
+    with connection:
+        connection.execute(INSERT_USER, (username, ))
 
 
 def create_tables():
