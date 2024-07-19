@@ -33,7 +33,7 @@ def print_movie_list(heading, movies):
         movie_date = datetime.datetime.fromtimestamp(release_date)
         human_date = movie_date.strftime("%b %d %Y")
         print(f"{_id}: {title} (on {human_date})")
-        
+
     print("--- \n")
 
 
@@ -44,10 +44,10 @@ def print_watched_movie_list(username, movies):
     print("---- \n")
 
 
-def prompt_watch_movie():
+def prompt_add_watched_movie():
     username = input("Username: ")
-    movie_title = input("Enter movie title you've watched: ")
-    database.watch_movies(username, movie_title)
+    movie_id = input("Movie ID: ")
+    database.watch_movies(username, movie_id)
 
 
 while (user_input := input(menu)) != "6":
