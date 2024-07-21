@@ -7,7 +7,7 @@ menu = """Please select one of the following options:
 3) View all movies
 4) Watch a movie
 5) View watched movies.
-7) Add user to the app.
+6) Add user to the app.
 7) Exit.
 
 Your selection: """
