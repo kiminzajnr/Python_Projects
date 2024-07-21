@@ -31,7 +31,7 @@ WHERE users.username = ?;
 """
 INSERT_USER = "INSERT INTO users (username) VALUES (?);"
 SEARCH_MOVIES = "SELECT * FROM movies WHERE title LIKE ?;"
-CREATE_RELEASE_INDEX = "CREATE INDEX IF NOT EXISTS idx_movies_release ON movies(relese_timestamp);"
+CREATE_RELEASE_INDEX = "CREATE INDEX IF NOT EXISTS idx_movies_release ON movies(release_timestamp);"
 
 
 connection = sqlite3.connect("data.db")
