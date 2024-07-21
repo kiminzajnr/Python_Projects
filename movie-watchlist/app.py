@@ -58,7 +58,16 @@ def prompt_add_user():
     database.add_user(username)
 
 
-while (user_input := input(menu)) != "7":
+def prompt_search_movies():
+    search_term = input("Enter the partial movie title: ")
+    movies = database.search_movies(search_term)
+    if movies:
+        print_movie_list("Movies found", movies)
+    else:
+        print("Found no movies for that search term!")
+
+
+while (user_input := input(menu)) != "8":
     if user_input == "1":
         prompt_add_movie()
     elif user_input == "2":
@@ -73,5 +82,7 @@ while (user_input := input(menu)) != "7":
         prompt_show_watched_movies()
     elif user_input == "6":
         prompt_add_user()
+    elif user_input == "7":
+        prompt_search_movies()
     else:
         print("Invalid input, please try again!")
