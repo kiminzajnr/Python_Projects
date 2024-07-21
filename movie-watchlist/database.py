@@ -30,6 +30,7 @@ JOIN users ON users.username = watched.user_username
 WHERE users.username = ?;
 """
 INSERT_USER = "INSERT INTO users (username) VALUES (?);"
+SEARCH_MOVIES = "SELECT * FROM movies WHERE title LIKE ?;"
 
 
 connection = sqlite3.connect("data.db")
@@ -60,6 +61,14 @@ def get_movies(upcoming=False):
             cursor.execute(SELECT_UPCOMING_MOVIES, (today_timestamp, ))
         else:
             cursor.execute(SELECT_ALL_MOVIES)
+        return cursor.fetchall()
+    
+
+def search_movies(search_term):
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute(SEARCH_MOVIES, (f"%{search_term}%",))
+
         return cursor.fetchall()
 
 
