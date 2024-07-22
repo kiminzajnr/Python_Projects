@@ -119,7 +119,7 @@ sudo systemctl restart mysql
 CHANGE MASTER TO
 MASTER_HOST='master_ip',
 MASTER_USER='replica_user',
-MASTER_PASSWORD='password#70',
+MASTER_PASSWORD='password',
 MASTER_LOG_FILE='mysql-bin.000001',
 MASTER_LOG_POS=154;
 ```
