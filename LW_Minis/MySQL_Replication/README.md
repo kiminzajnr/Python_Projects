@@ -64,7 +64,10 @@ SHOW MASTER STATUS;
 ```
 
 ## Migrate existing data to slave
-- Create a mysqldump utility
+- Create a stanpshot using mysqldump utility
+```
+sudo mysqldump tyrell_corp > tyrell_corp.sql
+```
 ```
 scp -i ~/.ssh/priv.key tyrell_corp.sql ubuntu@slave_ip:/tmp/
 ```
