@@ -68,6 +68,8 @@ SHOW MASTER STATUS;
 ```
 sudo mysqldump tyrell_corp > tyrell_corp.sql
 ```
+
+- Use scp to copy the snapshot to slave
 ```
 scp -i ~/.ssh/priv.key tyrell_corp.sql ubuntu@slave_ip:/tmp/
 ```
