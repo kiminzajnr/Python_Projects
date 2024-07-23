@@ -64,7 +64,7 @@ SHOW MASTER STATUS;
 ```
 
 ## Migrate existing data to slave
-- Create a stanpshot using mysqldump utility
+- Create a snapshot using mysqldump utility
 ```
 sudo mysqldump tyrell_corp > tyrell_corp.sql
 ```
