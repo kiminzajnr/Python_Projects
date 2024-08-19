@@ -1,8 +1,27 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 body {
+    box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "segoe UI", Ubuntu, sans-serif;
     color: #002244;
 }
 
+main {
+    max-width: 35rem;
+    margin: 3.75rem auto 0 auto;
+}
+
+h1 {
+    margin-bottom: 2.5rem;
+}
+
 p {
     line-height: 150%;
+}
+
+img {
+    max-width: 100%;
 }
