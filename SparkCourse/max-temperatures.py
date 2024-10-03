@@ -20,4 +20,4 @@ maxTemps = stationTemps.reduceByKey(lambda x, y: max(x, y))
 results = maxTemps.collect()
 
 for result in results:
-    print(result[0], "\t{:.2}F".format(result[1]))
+    print(result[0], "\t{:.2f}F".format(result[1]))

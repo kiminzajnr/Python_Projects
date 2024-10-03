@@ -26,3 +26,19 @@ $ spark-submit ratings-counter.py
 4 34174
 5 21201
 ```
+
+## [Minimum Temperature](./min-tempretures.py)
+- Minimum temperature by location
+
+```
+ITE00100554 	5.36F
+EZE00100082 	7.70F
+```
+
+## [Maximum Temperature](./max-temperatures.py)
+- Maximum temperature by location
+
+```
+ITE00100554 	90.14F
+EZE00100082 	90.14F
+```
