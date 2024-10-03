@@ -1,6 +1,6 @@
 ## Taming Bid Data with Apache Spark and Python
 
-## [Friends by Age](/friends-by-age.py)
+## [Friends by Age](friends-by-age.py)
 - Calculate number of friends by age
 
 ```
@@ -14,7 +14,7 @@ $ spark-submit friends-by-age.py
 (59, 220.0)
 ```
 
-## [Ratings Counter](/ratings-counter.py)
+## [Ratings Counter](ratings-counter.py)
 - Generate ratings histogram
 
 ```
