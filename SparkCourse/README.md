@@ -48,3 +48,6 @@ EZE00100082 	90.14F
 
 ## [Count word occurrences](./word-count.py)
 - Count word occurrences using `flatMap`
+
+## [Improved word count](./word-count-better.py)
+- Improved word count script with regular expressions
