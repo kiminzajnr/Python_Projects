@@ -12,6 +12,9 @@ $ spark-submit friends-by-age.py
 (40, 250.8235294117647)
 (68, 269.6)
 (59, 220.0)
+
+...
+
 ```
 
 ## [Ratings Counter](./ratings-counter.py)
@@ -42,3 +45,6 @@ EZE00100082 	7.70F
 ITE00100554 	90.14F
 EZE00100082 	90.14F
 ```
+
+## [Count word occurrences](./word-count.py)
+- Count word occurrences using `flatMap`
