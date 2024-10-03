@@ -51,3 +51,6 @@ EZE00100082 	90.14F
 
 ## [Improved word count](./word-count-better.py)
 - Improved word count script with regular expressions
+
+## [Sort word count](./word-count-better-sorted.py)
+- Sorting word count results
