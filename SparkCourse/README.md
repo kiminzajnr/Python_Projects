@@ -57,3 +57,6 @@ Sorting word count results
 
 ## [Total amount spent](./customer-amount-spent.py)
 Find the total amount spend by customer and sort by total amount spent
+
+## [Execute SQL commands](./spark-sql.py)
+Executing SQL commands and SQL-style functions on a DataFrame
