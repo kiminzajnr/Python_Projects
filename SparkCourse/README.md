@@ -54,3 +54,6 @@ Improved word count script with regular expressions
 
 ## [Sort word count](./word-count-better-sorted.py)
 Sorting word count results
+
+## [Total amount spent](./customer-amount-spent.py)
+Find the total amount spend by customer and sort by total amount spent
