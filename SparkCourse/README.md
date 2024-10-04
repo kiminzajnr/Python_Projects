@@ -1,7 +1,7 @@
 ## Taming Bid Data with Apache Spark and Python
 
 ## [Friends by Age](./friends-by-age.py)
-- Calculate number of friends by age
+Calculate number of friends by age
 
 ```
 $ spark-submit friends-by-age.py
@@ -18,7 +18,7 @@ $ spark-submit friends-by-age.py
 ```
 
 ## [Ratings Counter](./ratings-counter.py)
-- Generate ratings histogram
+Generate ratings histogram
 
 ```
 $ spark-submit ratings-counter.py
@@ -31,7 +31,7 @@ $ spark-submit ratings-counter.py
 ```
 
 ## [Minimum Temperature](./min-tempretures.py)
-- Minimum temperature by location
+Minimum temperature by location
 
 ```
 ITE00100554 	5.36F
@@ -39,7 +39,7 @@ EZE00100082 	7.70F
 ```
 
 ## [Maximum Temperature](./max-temperatures.py)
-- Maximum temperature by location
+Maximum temperature by location
 
 ```
 ITE00100554 	90.14F
@@ -47,10 +47,10 @@ EZE00100082 	90.14F
 ```
 
 ## [Count word occurrences](./word-count.py)
-- Count word occurrences using `flatMap`
+Count word occurrences using `flatMap`
 
 ## [Improved word count](./word-count-better.py)
-- Improved word count script with regular expressions
+Improved word count script with regular expressions
 
 ## [Sort word count](./word-count-better-sorted.py)
-- Sorting word count results
+Sorting word count results
