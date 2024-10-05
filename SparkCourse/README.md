@@ -63,3 +63,6 @@ Executing SQL commands and SQL-style functions on a DataFrame
 
 ## [Using DataFrames](./spark-sql-dataframes.py)
 Using DataFrames instead of RDD's
+
+## [Friends by age](./spark-sql-dataframe-exercise.py)
+Friends by age with DataFrames exercise
