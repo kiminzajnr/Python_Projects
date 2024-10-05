@@ -66,3 +66,6 @@ Using DataFrames instead of RDD's
 
 ## [Friends by age](./spark-sql-dataframe-exercise.py)
 Friends by age with DataFrames exercise
+
+## [Word count](./word-count-better-sorted-dataframe.py)
+Word count with DataFrames
