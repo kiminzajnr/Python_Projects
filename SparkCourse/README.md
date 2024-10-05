@@ -60,3 +60,6 @@ Find the total amount spend by customer and sort by total amount spent
 
 ## [Execute SQL commands](./spark-sql.py)
 Executing SQL commands and SQL-style functions on a DataFrame
+
+## [Using DataFrames instead of RDD's](./spark-sql-dataframes.py)
+Using DataFrames instead of RDD's
