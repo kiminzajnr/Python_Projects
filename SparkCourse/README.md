@@ -72,3 +72,6 @@ Word count with DataFrames
 
 ## [Min Temperature](./min-temperature-dataframes.py)
 Minimum Temperature with DataFrames using a custom schema
+
+## [Total spent by customer](./total-spent-customer-sorted.py)
+Exercise total amount spent by customer with DataFrames
