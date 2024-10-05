@@ -69,3 +69,6 @@ Friends by age with DataFrames exercise
 
 ## [Word count](./word-count-better-sorted-dataframe.py)
 Word count with DataFrames
+
+## [Min Temperature](./min-temperature-dataframes.py)
+Minimum Temperature with DataFrames using a custom schema
