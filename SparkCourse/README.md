@@ -78,3 +78,6 @@ Exercise total amount spent by customer with DataFrames
 
 ## [Most popular movie](./popular-movies-dataframe.py)
 Find the most popular movie
+
+## [Broadcast variable](./popular-movie-nice-dataframe.py)
+Use Broadcast variables to display movie names instead of ID Numbers
