@@ -87,3 +87,6 @@ Find the most popular superhero
 
 ## [Most obscure superhero](./most-obscure-superheros.py)
 Find the most obscure superheros
+
+## [Degrees of separation](./degrees-of-separation.py)
+Superhero degrees of separation
