@@ -81,3 +81,9 @@ Find the most popular movie
 
 ## [Broadcast variable](./popular-movie-nice-dataframe.py)
 Use Broadcast variables to display movie names instead of ID Numbers
+
+## [Most popular superhero](./most-popular-superhero-dataframe.py)
+Find the most popular superhero 
+
+## [Most obscure superhero](./most-obscure-superheros.py)
+Find the most obscure superheros
