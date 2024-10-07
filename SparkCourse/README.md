@@ -75,3 +75,6 @@ Minimum Temperature with DataFrames using a custom schema
 
 ## [Total spent by customer](./total-spent-customer-sorted.py)
 Exercise total amount spent by customer with DataFrames
+
+## [Most popular movie](./popular-movies-dataframe.py)
+Find the most popular movie
